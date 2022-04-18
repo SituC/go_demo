@@ -16,5 +16,5 @@ func Hello(c *gin.Context) {
 func main() {
 	e := gin.Default()
 	e.GET("/hello", Hello)
-	e.Run()
+	e.Run(":8080")
 }

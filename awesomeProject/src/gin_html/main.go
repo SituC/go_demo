@@ -11,8 +11,10 @@ func Login(c *gin.Context) {
 
 func DoLogin(c *gin.Context) {
 	username := c.PostForm("username")
-	password := c.PostForm("password")
-	
+	// password := c.PostForm("password")
+	// 取post参数可以设置默认值
+	password := c.DefaultPostForm("password", "123")
+
 	c.HTML(200, "index.html", gin.H{
 		"username": username,
 		"password": password,
